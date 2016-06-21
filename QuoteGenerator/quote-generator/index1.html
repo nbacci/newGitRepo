@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Page API Practice</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  </head>
+  <body>
+    <h1>TITLE</h1>
+      <p id="currTemp"></p>
+    <script type="text/javascript">
+      $.ajax({
+        method: 'GET',
+        url: 'http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e',
+        success: function(weather_data){
+          // console.log(weather_data.main.temp)
+          $("#currTemp").text("The current temp in San Francisco is: "+weather_data.main.temp+" F");
+        }
+      });
+    </script>
+  </body>
+</html>
